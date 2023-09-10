@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imgs/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500&family=Roboto+Slab:wght@300;500;600;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100;1,300&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/all.css" type="text/css" />
+    <link rel="stylesheet" href="css/animate.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="images/logo.png" type="image/x-icon">
+    <title>Movie App</title>
+</head>
+
+<body  >
+
+
+   <div class="load"> <span class="loader"></span></div>
+
+<!-------------------------------nav bar ----------------------------------->
+    <nav class="side-nav-menu min-vh-100 position-fixed d-flex top-0">
+        <div class="nav-tab  d-flex flex-column justify-content-between min-vh-100 p-4">
+            <div class="links">
+                <ul class="list-unstyled overflow-hidden text-capitalize">
+                    <li class="pb-3 position-relative cursor-pointer"><a onclick="getMovie('movie/now_playing'),topPage()" href="#">Now playing</a></li>
+                    <li class="py-3 position-relative cursor-pointer"><a onclick="getMovie('tv/popular'),topPage()" href="#">Popular</a></li>
+                    <li class="py-3 position-relative cursor-pointer"><a onclick="getMovie('tv/top_rated'),topPage()" href="#">top rated</a></li>
+                    <li class="py-3 position-relative cursor-pointer"><a onclick="getMovie('trending/all/day'),topPage()" href="#">trending</a></li>
+                    <li class="py-3 position-relative cursor-pointer"><a onclick="getMovie('movie/upcoming'),topPage()" href="#">upcoming</a></li>
+                    <li class="py-3 position-relative cursor-pointer"><a  href="#contact"  id="contactUs">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="nav-footer">
+                <div class="icons ps-2 mb-3">
+                    <i class="fa-brands fa-facebook-f pe-3"></i>
+                    <i class="fa-brands fa-twitter pe-3"></i>
+                    <i class="fa-solid fa-globe pe-3"></i>
+                </div>
+                <div class="footer">
+                    <p class="text-capitalize ">Copyright © 2022 All Rights <br> Reserved. <br>
+                        created by <a href="https://github.com/Develekko" class="link-danger fw-bold"
+                            target="_blank">mahmoud shaaban</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="nav-header d-flex flex-column justify-content-between py-4 text-center px-3  text-black">
+            <img class="logo" src="images/logo.png" alt="">
+            <i class="fa-solid open-nav  fa-align-justify fa-2x  "></i>
+
+            <div>
+                <i class="fa-solid  none fa-globe py-1 "></i>
+                <i class="fa-solid none fa-share-nodes py-1"></i>
+            </div>
+        </div>
+    </nav>
+<!-------------------------------nav bar ----------------------------------->
+
+
+
+<!-------------------------------movies ----------------------------------->    
+
+    <section id="movie" class="container py-5">
+        <input id="search"  type="search" placeholder="Search"
+            class="form-control w-50 mx-auto bg-transparent rounded-pill text-white shadow-none border-white px-3">
+        <div class="row g-4 mt-3 text-white" id="moviesHtml">
+
+
+        </div>
+
+        </div>
+    </section>
+
+    <!-------------------------------movies ----------------------------------->  
+
+
+    <!-------------------------------contact us ----------------------------------->
+
+    <section id="contact" class="container text-white py-5">
+        <h2>Contact US</h2>
+        <form>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <input type="text" required id="name"  oninput="validName()" maxlength="37" class="form-control mt-4" placeholder="Enter Your Name">
+                    <span  class=" errorName animate__fadeOutUp animate__animated d-none "> Invalid Name , only Characters allowed</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="email" required id="email"  oninput="validEmail()"  class="form-control mt-4" placeholder="Enter Your Email">
+                    <span Class="errorEmail animate__fadeOutUp animate__animated d-none" >Invalid Email , try example@domain.com</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="number"required id="phone"  oninput="validPhone()" class="form-control mt-4" placeholder="Enter Your Phone">
+                    <span Class="errorPhone animate__fadeOutUp animate__animated d-none" >Invalid Phone Number</span>
+                </div>
+                <div class="col-md-6">
+                    <input type="number"required id="age"  oninput="validAge()" class="form-control mt-4" placeholder="Enter Your Age">
+                    <span Class="errorAge animate__fadeOutUp animate__animated d-none" >Your age must be over 16+</span>
+                </div>
+                <div class="col-md-6 position-relative">
+                    <input type="password" required id="password"  oninput="validPass()" class="form-control mt-4" placeholder="Enter Your Password">
+                    <span Class="errorPass animate__fadeOutUp animate__animated d-none" >password must contain numbers & letters at least 8 character </span>
+                    <span class="showPass position-absolute  "> <i data-show="show" class=" eyePass animate__animated d-none  fa-solid fa-eye-slash"></i></span>
+                </div>
+                <div class="col-md-6">
+                    <input type="password" required id="repassword"  oninput="validRePass()"  class="form-control mt-4" placeholder="ReEnter Password">
+                    <span Class="errorrepass  animate__fadeOutUp animate__animated d-none"> Password not match</span>
+                </div>
+                <div class="col-md-12  mt-4">
+                    <button type="submit"   class="form-btn btn  px-4 py-2 text-white rounded-2 mb-3 animate__animated">Submit</button>
+                </div>
+            </form>
+            
+        </div>
+    </section>
+
+
+    <!-------------------------------contact us ----------------------------------->
+
+    <div id="toTop" class=" d-none animate__animated"><a class="position-fixed cursor-pointer px-3 py-2" onclick="topPage()"><i class="fa-solid fa-arrow-up-long"></i></a></div>
+    
+
+
+    <script src="JAVA/jquery-3.7.0.min.js"></script>
+    <script src="java/bootstrap.bundle.min.js"></script>
+    <script src="JAVA/main.js"></script>
+</body>

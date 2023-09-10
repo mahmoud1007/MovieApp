@@ -1,0 +1,299 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    user-select: none;
+}
+html {
+    overflow-x: hidden;
+    scroll-behavior: unset!important;
+}
+body
+{
+    background-color: #0D0D0D;
+    font-family: Segoe UI Light;
+    color: #fff;
+    font-size: 1rem;
+}
+a ,li{
+    text-decoration: none;
+    list-style-type: none;
+}
+.links li a{
+    transition: all 0.2s linear;
+    font-weight: 500;
+    color: white;
+}
+.links li a:hover{
+    color: #e14453;
+   
+}
+.nav-header{
+    background-color: transparent !important;
+    justify-content: center !important;
+   }
+   .nav-header img{
+    display: none;
+    
+   }
+   .nav-header .none{
+    display: none;
+    
+   }
+   .open-nav{
+    color: white  ;
+  }
+
+
+
+.nav-tab{
+    background-color: #000;
+}
+
+.logo{
+    width: 30px;
+}
+
+i{
+    cursor: pointer;
+}
+
+.footer{
+    color: rgb(153, 153, 153)!important;
+    font-size: 1rem;
+}
+
+.side-nav-menu{
+    z-index: 99;
+}
+
+.cursor-pointer{
+    cursor: pointer;
+}
+
+.alert{
+    width: fit-content;
+}
+
+.load{
+background-color: #000;
+position: fixed;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+z-index: 9999;
+display: flex;
+align-items: center;
+justify-content: center;
+
+    
+}
+.loader {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  display: inline-block;
+  border-top: 4px solid #FFF;
+  border-right: 4px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+} 
+
+
+#movie ::placeholder{
+  color: rgb(108, 106, 106);
+}
+
+#movie input{
+    border: solid 2px;
+}
+
+
+#contact .form-control{
+    box-shadow: none;
+    border: none;
+    background-color: transparent;
+    color: white;
+    border-radius: 0;
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+#contact ::placeholder{
+    color: rgb(119, 117, 117) !important ;
+    text-align: center;
+    font-size: large;
+    font-weight: 700;
+    
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.form-btn {
+    color: white!important;
+    background-color: black;
+}
+
+
+.form-btn:hover {
+    color: #000!important;
+    background-color: #F8F6F6;
+}
+
+
+.showPass{
+    bottom: 35%;
+    right: 3%;
+}
+
+/* card */
+.item
+{
+    width: 90%;
+    margin: auto;
+}
+
+.cardImage 
+{
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+}
+.cardImage img
+{
+   transition: all 0.5s ease-in-out;
+}
+.cardImage img.animate
+{
+    transform: rotate(5deg) scale(1.25);
+    filter: blur(3px);
+   
+}
+
+.overlay
+{
+    background-color: rgba(0,0,0,0.6);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 20px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+.overlay .title
+{
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-align: center;
+    user-select: text;
+}
+.overlay .date{
+    font-style: italic;
+}
+.overlay .desc{
+   color: #EDEDED;
+   user-select: text;
+   font-size: 0.9rem;
+}
+.overlay .vote
+{
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid green;
+    padding: 10px;
+    border-radius: 50%;
+  
+}
+
+
+#toTop a{
+  position: relative;
+color: white;
+  top: 90%;
+  right: 2%;
+  border-radius: 50%;
+  background-color: #000;
+ 
+}
+
+
+
+
+
+
+
+/*Smalldevices(landscapephones,576pxandup)*/
+@media (min-width: 576px) {
+
+    
+  }
+  
+  /*Largedevices(laptop,992pxandup)*/
+  @media (min-width: 992px) {
+    .nav-header{
+        background-color: white !important;
+        justify-content: space-between !important;
+       }
+       .nav-header img{
+        display: block;
+        
+       }
+       .nav-header .none{
+        display: block;
+        
+       }
+        
+      
+      .open-nav{
+        color: black  ;
+      }
+
+      .overlay .title
+      {
+         font-size: 30px;
+      }
+      .overlay .desc
+      {
+         font-size: 14px;
+      }
+      .overlay .date
+      {
+         margin-bottom: 0px;
+      }
+
+    }
+
+        
+      
+  
+  
+  
+  /*Extralargedevices(largedesktops,1200pxandup)*/
+  @media (min-width: 1200px) {
+  
+   
+  }
+  
+  
+  
+
