@@ -370,8 +370,8 @@ function validAge() {
 }
 let passInput = document.getElementById("password");
 function validPass() {
-  let regex = /^(?=.*\d)(?=.*[A-Za-z])[0-9a-zA-Z]{8,}$/;
  
+  let regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
   if (passInput.value == "") {
     trueRegex();
@@ -403,7 +403,7 @@ function validPass() {
   }
 
   $(".eyePass").click(function () { 
-    if ($('#password').attr('type') == "password"){
+    if ($('#password').attr('type') =="password"){
       $(".eyePass").addClass("fa-eye ");
       $(".eyePass").removeClass("fa-eye-slash ");
      
